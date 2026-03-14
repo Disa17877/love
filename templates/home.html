@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Для тебя ❤️</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:Arial;
+color:white;
+text-align:center;
+}
+
+.container{
+background:rgba(255,255,255,0.15);
+padding:40px;
+border-radius:20px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#ff2f6c;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin:10px;
+}
+
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+.modal-box{
+background:white;
+color:black;
+padding:30px;
+border-radius:15px;
+}
+
+.hidden{
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container" id="main">
+
+<h1>Добро пожаловать, Нурай ❤️</h1>
+
+<p>Я сделал этот мини сайт для тебя потому, что ты особенная для меня</p>
+
+<button id="open">Открой сюрприз</button>
+
+</div>
+
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<h2>Пойдешь со мной на свидание?</h2>
+
+<button id="yes">Да</button>
+<button id="no">Нет</button>
+
+</div>
+
+</div>
+
+
+<div class="container hidden" id="congrats">
+
+<h1>🎉 Урааа 🎉</h1>
+
+<p>Выбери раздел</p>
+
+<button onclick="window.location.href='/gallery/'">
+Галерея воспоминаний
+</button>
+<button onclick="window.location.href='/special/'">
+Почему ты особенная
+</button>
+<button onclick="window.location.href='/poems/'">
+Стихи
+</button>
+<button onclick="window.location.href='/letter/'">
+Письмо для тебя
+</button>
+
+</div>
+
+
+<script>
+
+const openBtn = document.getElementById("open")
+const modal = document.getElementById("modal")
+const yes = document.getElementById("yes")
+const no = document.getElementById("no")
+const main = document.getElementById("main")
+const congrats = document.getElementById("congrats")
+
+openBtn.onclick = () => {
+modal.style.display="flex"
+}
+
+yes.onclick = () => {
+modal.style.display="none"
+main.style.display="none"
+congrats.classList.remove("hidden")
+}
+
+no.onmouseover = () => {
+
+const x = Math.random()*300
+const y = Math.random()*200
+
+no.style.position="absolute"
+no.style.left=x+"px"
+no.style.top=y+"px"
+
+}
+
+</script>
+
+</body>
+</html>
